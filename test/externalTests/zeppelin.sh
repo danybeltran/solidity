@@ -65,6 +65,7 @@ function zeppelin_test
 
     for preset in $SELECTED_PRESETS; do
         hardhat_run_test "$config_file" "$preset" "${compile_only_presets[*]}" compile_fn test_fn
+        store_benchmark_report hardhat zeppelin "$preset" "${compile_only_presets[*]}"
     done
 }
 

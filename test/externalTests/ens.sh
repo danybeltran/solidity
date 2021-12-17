@@ -69,6 +69,7 @@ function ens_test
 
     for preset in $SELECTED_PRESETS; do
         truffle_run_test "$config_file" "$BINARY_TYPE" "${DIR}/solc" "$preset" "${compile_only_presets[*]}" compile_fn test_fn
+        store_benchmark_report truffle ens "$preset" "${compile_only_presets[*]}"
     done
 }
 
